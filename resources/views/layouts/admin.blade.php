@@ -248,10 +248,13 @@
                             <a href="{{ url ('') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li >
-                            <a href="#"><i class="fa fa-user" aria-hidden="false"></i> Users<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> Users<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('panels') }}">Create Users</a>
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin') }}"><i class="fa fa-users"></i> All Users</a>
+                                </li>
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin/create') }}"><i class="fa fa-user-plus"></i> Create User</a>
                                 </li>
                             </ul>
                         </li>

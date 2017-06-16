@@ -4,7 +4,7 @@
 
     <h1>Create User</h1>
         {{--<form method="post" action="/post">--}}
-         {!! Form::open(['method'=>'POST','action'=>'AdminController@store']) !!}
+         {!! Form::open(['method'=>'POST','action'=>'AdminController@store','files'=>true]) !!}
 
             <div class="form-group">
                         {!! Form::label('name','Name :') !!}
@@ -30,7 +30,7 @@
             {{--<input type="text" name="title" placeholder="enter your title">--}}
             {{--<input type="submit" name="submit">--}}
             <div class="form-group">
-            {!! Form::label('file','Upload Your Picture') !!}
+            {!! Form::label('photo_id','Upload Your Picture') !!}
             {!! Form::file('photo_id',null,['class'=>'form-control'])!!}
             </div>
 
