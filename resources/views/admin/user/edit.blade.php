@@ -50,12 +50,15 @@
 
     <div class="form-group">
         {!! Form::submit('Update User',['class'=>'btn btn-primary']) !!}
-    </div>
+        {!! Form::open(['method'=>'DELETE','action'=>['AdminController@destroy', $user->id],]) !!}
+        {!! Form::submit('Delete User',['class'=>'btn btn-danger pull-right']) !!}
 
     </div>
-
-
     {!! Form::close() !!}
+            {{--<form method="post" action="/post">--}}
+
+            {!! Form::close() !!}
+    </div>
     </div>
     <div class="row">
     @include('include.error_form')

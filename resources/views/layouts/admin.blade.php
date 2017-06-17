@@ -216,12 +216,16 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> {{Auth::user()->name}}</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="{{ url ('login') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -250,11 +254,22 @@
                         <li >
                             <a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> Users<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('admin') }}"><i class="fa fa-users"></i> All Users</a>
+                                <li>
+                                    <a href="{{ url ('admin/users') }}"><i class="fa fa-users"></i> All Users</a>
                                 </li>
-                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('admin/create') }}"><i class="fa fa-user-plus"></i> Create User</a>
+                                <li>
+                                    <a href="{{ url ('admin/users/create') }}"><i class="fa fa-user-plus"></i> Create User</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="#"><i class="fa fa-list" aria-hidden="true"></i> Post<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ url ('admin/post') }}"><i class="fa fa-globe"></i> All post</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url ('admin/post/create') }}"><i class="fa fa-plus-circle"></i> Create Post</a>
                                 </li>
                             </ul>
                         </li>

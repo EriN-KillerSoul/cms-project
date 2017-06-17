@@ -39,11 +39,22 @@ class User extends Authenticatable
 
     }
 
-    public function setPasswordAttribute($password){
-        if(!empty($password)){
+//    public function setPasswordAttribute($password){
+//        if(!empty($password)){
+//
+//            $this->attributes['password'] = bcrypt($password);
+//        }
+//
+//    }
+    public function isAdmin(){
 
-            $this->attributes['password'] = bcrypt($password);
+        if($this->role->name == 'Admin' && $this->is_active == 1){
+
+            return true;
+
         }
+
+        return false;
 
     }
 }

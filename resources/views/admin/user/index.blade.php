@@ -1,5 +1,11 @@
 @extends('layouts.admin')
 @section('section')
+
+    @if(Session::has('deleted_user'))
+
+        <p class="bg-danger">{{session('deleted_user')}}</p>
+
+        @endif
     <h1>User</h1>
      <table class="table table-striped">
          <thead>
@@ -22,7 +28,7 @@
            <tr>
                <td>{{$user->id}}</td>
                <td><img height="70" src="{{asset($user->photo ? $user->photo->file : 'images/1.png')}}"/></td>
-               <td><a href="{{route('admin.edit', $user->id)}}">{{$user->name}}</a></td>
+               <td><a href="{{route('users.edit', $user->id)}}">{{$user->name}}</a></td>
                <td>{{$user->email}}</td>
                <td>{{$user->role->name}}</td>
                <td>{{$user->is_active == 1 ? 'Active': 'Not Active'}}</td>
