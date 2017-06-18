@@ -21,10 +21,10 @@
                <tr>
                  <td>{{$posts->id}}</td>
                  <td>{{$posts->user->name}}</td>
-                 <td>{{$posts->category_id}}</td>
+                 <td>{{$posts->category ? $posts->category->name : "not have category"}}</td>
                  <td>{{$posts->title}}</td>
                  <td>{{$posts->body}}</td>
-                 <td><img height="70" src="{{asset($posts->photo ? $posts->photo->file : 'images/1.png')}}"></td>
+                 <td><img height="70" src="{{asset($posts->photo ? $posts->photo->file : 'images/2.jpg')}}"></td>
                  <td>{{$posts->created_at->diffForHumans()}}</td>
                  <td>{{$posts->updated_at->diffForHumans()}}</td>
                </tr>
