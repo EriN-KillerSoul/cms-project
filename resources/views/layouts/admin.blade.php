@@ -273,6 +273,17 @@
                                 </li>
                             </ul>
                         </li>
+                        <li >
+                            <a href="#"><i class="fa fa-list" aria-hidden="true"></i> Categories<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ url ('admin/category') }}"><i class="fa fa-globe"></i> All Categories</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url ('admin/category/create') }}"><i class="fa fa-plus-circle"></i> Create Categories</a>
+                                </li>
+                            </ul>
+                        </li>
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
                             <a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
                             <!-- /.nav-second-level -->
