@@ -1,4 +1,3 @@
-
 @extends('layouts.plane')
 
 @section('body')
@@ -284,9 +283,16 @@
                                 </li>
                             </ul>
                         </li>
-                        <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
-                            <!-- /.nav-second-level -->
+                        <li >
+                            <a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i> Media<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ url ('admin/media') }}"><i class="fa fa-picture-o"></i> All Media</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url ('admin/media/create') }}"><i class="fa fa-upload"></i> Upload Media</a>
+                                </li>
+                            </ul>
                         </li>
                         <li {{ (Request::is('*tables') ? 'class="active"' : '') }}>
                             <a href="{{ url ('tables') }}"><i class="fa fa-table fa-fw"></i> Tables</a>
@@ -380,6 +386,8 @@
             <div class="row">
                 @yield('section')
 
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.css" />
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js" type="text/javascript"></script>
             </div>
             <!-- /#page-wrapper -->
         </div>

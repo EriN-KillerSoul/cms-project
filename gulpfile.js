@@ -19,7 +19,9 @@ elixir(function(mix) {
         'resources/css/font-awesome.css',
         'resources/css/sb-admin-2.css',
         'resource/css/metisMenu',
-        'resources/css/timeline.css'
+        'resources/css/timeline.css',
+        'resources/css/dropzone.css',
+        'resources/css/basic.css'
     ], 'public/assets/stylesheets/styles.css', './');
     mix.scripts([
         'resources/js/jquery.js',
@@ -27,7 +29,9 @@ elixir(function(mix) {
         'resources/js/Chart.js',
         'resources/js/metisMenu.js',
         'resources/js/sb-admin-2.js',
-        'resources/js/frontend.js'
+        'resources/js/frontend.js',
+        'resources/js/dropzone.js',
+        'resources/js/dropzone-amd-module.js'
     ], 'public/assets/scripts/frontend.js', './');
 });
 
